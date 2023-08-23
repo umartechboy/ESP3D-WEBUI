@@ -117,6 +117,7 @@ window.onload = function () {
 };
 
 var wsmsg = "";
+var calibListener;
 
 function startSocket() {
   try {
@@ -158,6 +159,8 @@ function startSocket() {
           wsmsg += msg;
           Monitor_output_Update(wsmsg);
           process_socket_response(wsmsg);
+          if (typeof calibListener !== undefined)
+            calibListener(msg);
           //msg = wsmsg.replace("\n", "");
           //wsmsg = msg.replace("\r", "");
           if (

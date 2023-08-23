@@ -1,4 +1,3 @@
 cd %~dp0
-cmd.exe /c npm install
-cmd.exe /c gulp package
-pause
+@REM cmd.exe /c npm install
+cmd.exe /c gulp package --lang en

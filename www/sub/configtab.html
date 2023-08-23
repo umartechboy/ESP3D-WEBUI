@@ -81,4 +81,26 @@
                 </table>
             </div>
     </center>
+    
+    <center>
+        <h2 id='tab_title_configuration'>
+            <span translate>Build Plate Calibration</span>
+        </h2>
+        </button>
+        <button type="button" id="calib_begin_btn" class="btn btn-primary" onclick="calibBegin();">
+            Begin Calibration
+        </button>
+        <button type="button" id="calib_abort_btn" class="btn btn-danger hide_it" onclick="calibAbort();">
+            Abort
+        </button>
+        <button type="button" id="calib_next_btn" class="btn btn-success hide_it" onclick="calibNextPoint();">
+            Go to Next Point
+        </button>
+        <button type="button" id="calib_up_btn" class="btn btn-warning hide_it" onclick="calibMoveUp();">
+            Move Up
+        </button>
+        <button type="button" id="calib_down_btn" class="btn btn-primary hide_it" onclick="calibMoveDown();">
+            Move Down
+        </button>
+    </center>
 </div>

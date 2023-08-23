@@ -323,11 +323,13 @@ gulp.task(clearlang)
 
 var defaultSeries = gulp.series(clean,  lint, Copy, concatApp, minifyApp, includehtml, includehtml, smoosh);
 //var packageSeries = gulp.series(clean,  lint, Copy, concatApp, minifyApp, smoosh, compress);
+var deplySeries = gulp.series(clean,  lint, Copy, concatApp, includehtml, includehtml, replaceSVG, clearlang, minifyApp, smoosh);
 var packageSeries = gulp.series(clean,  lint, Copy, concatApp, includehtml, includehtml, replaceSVG, clearlang, minifyApp, smoosh, compress, clean2);
 var package2Series = gulp.series(clean,  lint, Copy, concatApp, includehtml, includehtml, replaceSVG, smoosh);
 var package2testSeries = gulp.series(clean,  lint, Copytest, concatApptest, includehtml, includehtml, replaceSVG, smoosh);
 
 gulp.task('default', defaultSeries);
+gulp.task('deploy', deplySeries);
 gulp.task('package', packageSeries);
 gulp.task('package2', package2Series);
 gulp.task('package2test', package2testSeries);
