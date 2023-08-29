@@ -117,7 +117,7 @@ window.onload = function () {
 };
 
 var wsmsg = "";
-var calibListener;
+var utilListener;
 
 function startSocket() {
   try {
@@ -159,8 +159,8 @@ function startSocket() {
           wsmsg += msg;
           Monitor_output_Update(wsmsg);
           process_socket_response(wsmsg);
-          if (typeof calibListener !== undefined)
-            calibListener(msg);
+          if (typeof utilListener !== undefined)
+            utilListener(msg);
           //msg = wsmsg.replace("\n", "");
           //wsmsg = msg.replace("\r", "");
           if (
@@ -454,7 +454,7 @@ function update_UI_firmware_target() {
     document.getElementById("control_x_position_label").innerHTML = "Xw";
     document.getElementById("control_y_position_label").innerHTML = "Yw";
   } else if (target_firmware == "marlin-embedded") {
-    fwName = "Marlin ESP32";
+    fwName = "Markhor3D Enabler";
     document.getElementById("configtablink").style.display = "block";
     document.getElementById("auto_check_control").style.display = "flex";
     document.getElementById("motor_off_control").style.display = "table-row";
