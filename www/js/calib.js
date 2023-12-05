@@ -4,14 +4,16 @@ function calibBegin() {
     calibPoint = 1;
     currentZ = 0;
     utilWaitdlg("Preparing for calibration...", "Please wait while I prepare the bed and nozzle for calibration.");
+    coms.push("M104 S120");
+    coms.push("M109 S110");    
+    coms.push("M206 Z0");
     coms.push("G91");
     coms.push("G1 Z5 F1000");
     coms.push("G90");
     coms.push("G28 X Y");
     coms.push("G28 Z");
     coms.push("G29");
-    coms.push("M104 S120");
-    coms.push("M109 S110");
+    
     processQue();
 
     allDone = function () {

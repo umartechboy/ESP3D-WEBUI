@@ -133,6 +133,8 @@ function insertFilament() {
 
 function bedLevelingBoxes() {
     function func(resp){
+        if (resp == 'no')
+            return;
         sendCustomCommands(
             [
     "M83", 
